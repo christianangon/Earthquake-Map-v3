@@ -1,4 +1,4 @@
-![image](https://github.com/1997ian/Currency-Converter/assets/92027960/66d2b5b2-0ec4-4508-96e9-83c50c92860b)<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -27,14 +27,13 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h3 align="center">Currency Converter</h3>
+  <h3 align="center">Earthquake Map</h3>
 
   <p align="center">
-    A simple currency converter featured by 35 countries, adding new currency, vuex store management, and second converter.
-    <br />
-    <br />
-    <br />
-    <a href="https://currency-converter-rouge-ten.vercel.app/#/">View Demo</a>
+    Live Demo:
+    I have deployed the web page on a server for your convenience. You can access the live demo by following this link.
+
+Feel free to reach out if you have any questions or if further assistance is needed.
   
   </p>
 </div>
@@ -58,12 +57,10 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#features">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -72,7 +69,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A versatile and user-friendly currency converter built using PrimeVue,Vue 3, Vite, Vuex. Easily convert between 35 different countries, add custom currencies, and perform dual currency conversions with ease.
+A simple webpage showcasing a locations of earthquakes around the world on a map. This project created by Vue, Element Css Library, and Google Map (API key integration).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,18 +95,21 @@ A versatile and user-friendly currency converter built using PrimeVue,Vue 3, Vit
 
 ### Installation
 
-1. Get a free API Key at https://openexchangerates.org/account/app-ids
+1. Get a free API Key at https://developers.google.com/
 2. Clone the repo
    ```sh
-   git clone https://github.com/1997ian/Currency-Converter.git
+   git clone https://github.com/christianangon/Earthquake-Map.git
    ```
 3. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Enter your API in `main.js`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   load: {
+    key: "YOUR_API_KEY",
+    libraries: "places", // Add any additional libraries you need
+  },;
    ```
 5. Run the project
    ```sh
@@ -120,61 +120,34 @@ A versatile and user-friendly currency converter built using PrimeVue,Vue 3, Vit
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Features
 
-**Step 1: Launch the Application**
+**Google Map Integration**
 
-Open your web browser and navigate to the URL where your currency converter application is hosted.
+The web page displays a Google Map with annotations/pins representing earthquake locations.
 
-**Step 2: Default Conversion**
+**Interactive Annotations**
 
-Upon launching the application, you will see the default conversion rate set to convert Philippine Peso (PHP) to United States Dollar (USD).
+Users can tap on an annotation to view basic information about the earthquake, including the location and date/time in a callout.
 
-**Step 3: Changing Conversion**
+**Details Panel**
 
-To change the conversion, click on the dropdown menu labeled "I have" and select a different country from the list. This will change the source currency.
-
-Next, click on the dropdown menu labeled "I want" and select the currency to which you want to convert. This will change the target currency.
-
-As you change the source and target currencies, the conversion rate will automatically update to reflect the new currency pair.
+* Clicking on the callout opens a separate panel displaying comprehensive details about the selected earthquake.
+* On a desktop browser, this panel is positioned to the right of the map, ensuring a user-friendly layout.
+* On a mobile browser, the details panel appears underneath the map for an optimal mobile viewing experience.
 
 **Step 4: Performing Currency Conversion**
 
 Once you have selected the source and target currencies, enter the amount you want to convert in the input field provided. The application will instantly display the converted amount.
 
-**Step 5: Viewing Currency Rates**
+**Mobile Responsiveness**
 
-On the right side of the application, you will find a list of 35 different countries and their respective exchange rates. These rates are updated in real-time.
+The entire web page is designed to be mobile-responsive, providing a seamless and visually appealing experience across various devices.
 
-**Step 6: Adding Your Own Currency**
 
-If you want to add a custom currency to the list, click on the "Add Currency" button in the top navigation bar.
-
-Fill out the form with the currency code (e.g., USD for United States Dollar), currency name (e.g., United States Dollar), and the current exchange rate.
-
-Make sure to follow any validation rules or requirements for the currency information.
-
-After submitting the form, the custom currency will be added to the list, and you can use it for conversions just like the predefined currencies.
-
-Step 7: Resetting the Conversion
-
-To reset the conversion and go back to the default setting (PHP to USD), simply refresh the page.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Reset button
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -240,9 +213,5 @@ Project Link: https://github.com/1997ian/Currency-Converter
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-
-* [Primevue](https://primevue.org/)
-* [Primeflex](https://primeflex.org/)
-* [Currency API](https://openexchangerates.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
