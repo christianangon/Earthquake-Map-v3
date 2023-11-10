@@ -1,3 +1,5 @@
+![image](https://github.com/christianangon/Earthquake-Map-v3/assets/92027960/ddb943c5-b955-498a-84e6-83a4350c18c6)
+
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -31,9 +33,9 @@
 
   <p align="center">
     Live Demo:
-    I have deployed the web page on a server for your convenience. You can access the live demo by following this link.
-
-Feel free to reach out if you have any questions or if further assistance is needed.
+    I have deployed the web page on a server for your convenience. You can access the live demo by following this link. 
+    Feel free to reach out if you have any questions or if further assistance is needed.
+     <a href="https://christianangon-earthquakemap.vercel.app/#/">View Demo</a>
   
   </p>
 </div>
