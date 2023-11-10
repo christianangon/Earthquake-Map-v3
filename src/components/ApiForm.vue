@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { ref, computed, watch, inject } from "vue";
+import { ref, computed, watch, inject, onMounted } from "vue";
 import { useStore } from "vuex";
 import { useToast } from "primevue/usetoast";
 export default {
@@ -74,6 +74,7 @@ export default {
 
           // Commit API key to store
           store.commit("ADD_API_KEY", apiKey.value);
+          localStorage.setItem("API_KEY", apiKey.value);
         }, 1000);
       } else {
         // Show toast for an invalid API key
@@ -85,6 +86,14 @@ export default {
         });
       }
     }
+
+    onMounted(() => {
+      if (localStorage.getItem("API_KEY")) {
+        const api = localStorage.getItem("API_KEY");
+        apiKey.value = api;
+        store.commit("ADD_API_KEY", api);
+      }
+    });
 
     // Watch the API_KEY property in the store
     watch(
