@@ -2,22 +2,21 @@
  * @Description: Home
  * @Author: Ian
  * @Date: 2023-11-10 23:10:41
- * @LastEditTime: 2023-11-11 01:39:44
+ * @LastEditTime: 2023-11-11 02:21:36
  * @LastEditors: Ian
 -->
 <template>
-  <div>
+  <div ref="detailsContainer">
     <APIForm :handleApi="handleGetAPI" :API_KEY="API_KEY" v-if="!API_KEY" />
     <div class="grid grid-nogutter" v-if="API_KEY">
       <div :class="getGridColumnClass(9)">
         <EarthquakeMap :earthquakes="earthquakes" @show-details="showDetails" />
       </div>
-      <Transition :duration="550" name="nested">
+      <Transition :duration="550" name="nested" @after-enter="scrollToBottom">
         <div
           class="auto-scroll"
           :class="getGridColumnClass(3)"
           v-if="selectedEarthquake !== null"
-          ref="detailsContainer"
           :style="{ padding: selectedEarthquake !== null ? '10px' : '0' }"
         >
           <EarthquakeDetails
@@ -72,7 +71,9 @@ export default {
 
     showDetails(earthquake) {
       this.selectedEarthquake = earthquake;
-      this.show = true;
+      if (this.selectedEarthquake !== null) {
+        this.scrollToBottom();
+      }
       if (this.$mq && (this.$mq.screen === "sm" || this.$mq.screen === "xs")) {
         this.$nextTick(() => this.scrollToBottom());
       }
@@ -96,12 +97,11 @@ export default {
     },
 
     scrollToBottom() {
-      if (this.$refs.detailsContainer) {
-        this.$refs.detailsContainer.$el.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      window.scrollTo({
+        top:
+          document.body.scrollHeight || document.documentElement.scrollHeight,
+        behavior: "smooth",
+      });
     },
   },
 
