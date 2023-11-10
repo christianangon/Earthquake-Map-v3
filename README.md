@@ -100,14 +100,7 @@ A simple webpage showcasing a locations of earthquakes around the world on a map
    ```sh
    npm install
    ```
-4. Enter your API in `main.js`
-   ```js
-   load: {
-    key: "YOUR_API_KEY",
-    libraries: "places", // Add any additional libraries you need
-  },;
-   ```
-5. Run the project
+4. Run the project
    ```sh
    npm run dev
    ```
@@ -132,18 +125,12 @@ Users can tap on an annotation to view basic information about the earthquake, i
 * On a desktop browser, this panel is positioned to the right of the map, ensuring a user-friendly layout.
 * On a mobile browser, the details panel appears underneath the map for an optimal mobile viewing experience.
 
-**Step 4: Performing Currency Conversion**
-
-Once you have selected the source and target currencies, enter the amount you want to convert in the input field provided. The application will instantly display the converted amount.
-
 **Mobile Responsiveness**
 
 The entire web page is designed to be mobile-responsive, providing a seamless and visually appealing experience across various devices.
 
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 
