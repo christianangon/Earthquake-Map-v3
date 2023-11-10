@@ -1,5 +1,6 @@
 <template>
   <div class="flex justify-content-center">
+    <Toast />
     <Dialog
       v-model:visible="visible"
       modal
@@ -41,6 +42,7 @@
 <script>
 import { ref, computed, watch, inject } from "vue";
 import { useStore } from "vuex";
+import { useToast } from "primevue/usetoast";
 export default {
   name: "Converter",
   props: {
@@ -54,18 +56,42 @@ export default {
     const visible = ref(true);
     const store = useStore();
     const API_KEY = computed(() => store.state.API_KEY);
-
+    const toast = useToast();
     function handleProceed() {
-      console.log("piKey.value", apiKey.value);
-      store.commit("ADD_API_KEY", apiKey.value);
+      // Regular expression for validating the API key format
+      const apiKeyRegex = /^[A-Za-z0-9]{11}-[A-Za-z0-9-_]{27}$/;
+
+      // Check if apiKey is valid based on format and length
+      if (apiKeyRegex.test(apiKey.value)) {
+        setTimeout(() => {
+          // Show toast for a valid API key
+          toast.add({
+            severity: "success",
+            summary: "Success",
+            detail: "API Key is valid. Proceeding...",
+            life: 3000,
+          });
+
+          // Commit API key to store
+          store.commit("ADD_API_KEY", apiKey.value);
+        }, 1000);
+      } else {
+        // Show toast for an invalid API key
+        toast.add({
+          severity: "error",
+          summary: "Error",
+          detail: "Invalid API Key. Please check the format and length.",
+          life: 5000,
+        });
+      }
     }
-    // Watch the currencyList property in the store
+
+    // Watch the API_KEY property in the store
     watch(
       () => store.state.API_KEY,
       (newValue) => {
-        console.log("newValue", newValue);
         visible.value = false;
-        apiKey.value = newValue; // Update currencyList with the new value from the store
+        apiKey.value = newValue; // Update API_KEY with the new value from the store
       }
     );
 

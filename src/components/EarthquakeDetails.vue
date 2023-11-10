@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Author: Ian
+ * @Date: 2023-11-11 00:35:35
+ * @LastEditTime: 2023-11-11 02:29:55
+ * @LastEditors: Ian
+-->
 <template>
   <Card>
     <template #header>
@@ -15,9 +22,12 @@
         </span>
       </a>
     </template>
-    <template #subtitle> Time and Date </template>
+    <template #subtitle>
+      The earthquake's date and time are displayed below. Click the title above
+      to view more details.</template
+    >
     <template #content>
-      <div class="flex align-items-center">
+      <div class="flex align-items-center font-bold">
         <i class="pi pi-calendar"></i>
         <p class="m-0">
           {{ selectedEarthquake ? selectedEarthquake.date : "" }}

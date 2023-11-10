@@ -2,7 +2,7 @@
  * @Description: EarthquakeMap
  * @Author: Ian
  * @Date: 2023-11-10 23:12:07
- * @LastEditTime: 2023-11-11 01:32:01
+ * @LastEditTime: 2023-11-11 02:32:19
  * @LastEditors: Ian
 -->
 <template>
@@ -25,8 +25,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import { GoogleMap, Marker, CustomControl } from "vue3-google-map";
+import { GoogleMap, Marker } from "vue3-google-map";
 export default {
   name: "EarthquakeMap",
   props: ["earthquakes"],
@@ -44,7 +43,6 @@ export default {
   },
   methods: {
     showDetails(earthquake) {
-      console.log("earthquake", earthquake);
       this.$emit("show-details", earthquake);
     },
     handleGetAPI(api) {
