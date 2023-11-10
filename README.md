@@ -145,19 +145,11 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- LICENSE -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact
 
 LinkedIn - https://www.linkedin.com/in/christianangon/
 
-Project Link: https://github.com/1997ian/Currency-Converter
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
