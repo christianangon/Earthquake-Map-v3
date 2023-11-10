@@ -73,16 +73,10 @@
 
 A simple webpage showcasing a locations of earthquakes around the world on a map. This project created by Vue, Element Css Library, and Google Map (API key integration).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
 * [![Vue][Vue.js]][Vue-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
