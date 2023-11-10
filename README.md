@@ -71,7 +71,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A simple webpage showcasing a locations of earthquakes around the world on a map. This project created by Vue, Element Css Library, and Google Map (API key integration).
+A simple webpage showcasing a locations of earthquakes around the world on a map. This project created by Vue, Primuvue + Primeflex Css Library, Vuex, Vue Router, and Google Map (API key integration).
 
 
 ### Built With
@@ -81,6 +81,9 @@ A simple webpage showcasing a locations of earthquakes around the world on a map
 
 <!-- GETTING STARTED -->
 ## Getting Started
+
+## Note
+1. Please ensure your API key is valid; the map will not display if the key is invalid. In case of any issues, kindly reload the page.
 
 ### Prerequisites
 
