@@ -99,6 +99,7 @@ import TreeSelect from "primevue/treeselect";
 import TreeTable from "primevue/treetable";
 import TriStateCheckbox from "primevue/tristatecheckbox";
 import VirtualScroller from "primevue/virtualscroller";
+import store from "./store/store";
 
 // import store from "./store";
 
@@ -121,6 +122,7 @@ library.add(fab);
 
 const app = createApp(App);
 
+app.use(store);
 app.use(router);
 app.use(PrimeVue, { ripple: true });
 app.use(ToastService);

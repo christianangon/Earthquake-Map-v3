@@ -2,28 +2,31 @@
  * @Description: Home
  * @Author: Ian
  * @Date: 2023-11-10 23:10:41
- * @LastEditTime: 2023-11-11 00:28:07
+ * @LastEditTime: 2023-11-11 01:39:44
  * @LastEditors: Ian
 -->
 <template>
-  <div class="grid grid-nogutter">
-    <div :class="getGridColumnClass(9)">
-      <EarthquakeMap :earthquakes="earthquakes" @show-details="showDetails" />
-    </div>
-    <Transition :duration="550" name="nested">
-      <div
-        class="auto-scroll"
-        :class="getGridColumnClass(3)"
-        v-if="selectedEarthquake !== null"
-        ref="detailsContainer"
-        :style="{ padding: selectedEarthquake !== null ? '10px' : '0' }"
-      >
-        <EarthquakeDetails
-          :selectedEarthquake="selectedEarthquake"
-          @close="handleClose"
-        />
+  <div>
+    <APIForm :handleApi="handleGetAPI" :API_KEY="API_KEY" v-if="!API_KEY" />
+    <div class="grid grid-nogutter" v-if="API_KEY">
+      <div :class="getGridColumnClass(9)">
+        <EarthquakeMap :earthquakes="earthquakes" @show-details="showDetails" />
       </div>
-    </Transition>
+      <Transition :duration="550" name="nested">
+        <div
+          class="auto-scroll"
+          :class="getGridColumnClass(3)"
+          v-if="selectedEarthquake !== null"
+          ref="detailsContainer"
+          :style="{ padding: selectedEarthquake !== null ? '10px' : '0' }"
+        >
+          <EarthquakeDetails
+            :selectedEarthquake="selectedEarthquake"
+            @close="handleClose"
+          />
+        </div>
+      </Transition>
+    </div>
   </div>
 </template>
 
@@ -31,9 +34,18 @@
 import axios from "axios";
 import EarthquakeMap from "../components/EarthquakeMap.vue";
 import EarthquakeDetails from "../components/EarthquakeDetails.vue";
-
+import APIForm from "../components/ApiForm.vue";
+import { ref, computed, watch, inject } from "vue";
 export default {
   name: "Home",
+  setup(props, context) {
+    const store = inject("store");
+    const API_KEY = computed(() => store.state.API_KEY);
+
+    return {
+      API_KEY,
+    };
+  },
   data() {
     return {
       earthquakes: [],
@@ -96,6 +108,7 @@ export default {
   components: {
     EarthquakeMap,
     EarthquakeDetails,
+    APIForm,
   },
 
   created() {
