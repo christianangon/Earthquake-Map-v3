@@ -97,7 +97,7 @@ A simple webpage showcasing a locations of earthquakes around the world on a map
 1. Get a free API Key at https://developers.google.com/
 2. Clone the repo
    ```sh
-   git clone https://github.com/christianangon/Earthquake-Map.git
+   git clone https://github.com/christianangon/Earthquake-Map-v3.git
    ```
 3. Install NPM packages
    ```sh
